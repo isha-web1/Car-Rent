@@ -2,11 +2,20 @@
 import React from "react";
 import Link from "next/link";
 import { FaFacebookF, FaLinkedinIn, FaGoogle } from "react-icons/fa";
+import { registerUser } from "@/app/actions/auth/registerUser";
 
 export default function RegisterForm() {
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    await registerUser({ name, email, password });
+  };
  
   return (
-    <form  className="w-full max-w-lg space-y-8">
+    <form onSubmit={handleSubmit} className="w-full max-w-lg space-y-8">
       <label className="form-control w-full">
         <div className="label w-full">
           <span className="label-text  font-bold">Name</span>
