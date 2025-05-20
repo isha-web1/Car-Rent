@@ -64,6 +64,15 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <Link href={"/login"}>Login</Link>
+            </li>
+            <li>
+              <Link href={"/register"}>Register</Link>
+            </li>
+
+          </ul>
           <a className="btn btn-outline rounded-sm">Appointment</a>
         </div>
       </div>
