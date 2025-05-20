@@ -1,11 +1,11 @@
-import dbConnect from "@/lib/dbConnect";
+import dbConnect, { collectionNamesObj } from "@/lib/dbConnect";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 
 export default async function ServicesSection(){
    
-    const serviceCollection =  dbConnect('services')
+    const serviceCollection =  dbConnect(collectionNamesObj.servicesCollection)
      const data = await serviceCollection.find({}).toArray();
 
     return (
